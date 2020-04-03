@@ -11,8 +11,9 @@ function bs() {
 	serveSass();
 	browserSync.init({
 			server: {
-					baseDir: "./"
+					baseDir: "./",
 			},
+			notify: false,
 			socket: {
 				domain: "localhost:3000"
 			}
