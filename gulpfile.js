@@ -21,7 +21,7 @@ function bs() {
 	watch("./*.html").on('change', browserSync.reload);
 	watch("./sass/**/*.sass", serveSass);
 	watch("./sass/**/*.scss", serveSass);
-	watch("js/main.js").on('change', browserSync.reload);
+	watch("js/**/main.js").on('change', browserSync.reload);
 };
 
 function css(done) {
@@ -48,14 +48,14 @@ function css(done) {
 // };
 
 	function js(done) {
-	src(['js/**.js', '!js/**.min.js'])
+	src(['js/**/**.js', '!js/**.min.js'])
 		.pipe(minify({
 			ext: {
 				min: '.js'
 			}
 		}))
 		.pipe(dest('dist/js'));
-	src('js/**.min.js').pipe(dest('dist/js'));
+	src('js/**/**.min.js').pipe(dest('dist/js'));
 	done();
 };
 

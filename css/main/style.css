@@ -1,27 +1,27 @@
 @font-face {
   font-family: 'DIN Pro Light';
-  src: url("../fonts/DINPro/DINProLight.woff") format("woff"), url("../fonts/DINPro/DINProLight.woff2") format("woff");
+  src: url("../../fonts/DINPro/DINProLight.woff") format("woff"), url("../../fonts/DINPro/DINProLight.woff2") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: wrap; }
 
 @font-face {
   font-family: 'DIN Pro Regular';
-  src: url("../fonts/DINPro/DINProRegular.woff") format("woff"), url("../fonts/DINPro/DINProRegular.woff2") format("woff");
+  src: url("../../fonts/DINPro/DINProRegular.woff") format("woff"), url("../../fonts/DINPro/DINProRegular.woff2") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: wrap; }
 
 @font-face {
   font-family: 'DIN Pro Medium';
-  src: url("../fonts/DINPro/DINProMedium.woff") format("woff"), url("../fonts/DINPro/DINProMedium.woff2") format("woff");
+  src: url("../../fonts/DINPro/DINProMedium.woff") format("woff"), url("../../fonts/DINPro/DINProMedium.woff2") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: wrap; }
 
 @font-face {
   font-family: 'DIN Pro Bold';
-  src: url("../fonts/DINPro/DINProBold.woff") format("woff"), url("../fonts/DINPro/DINProBold.woff2") format("woff");
+  src: url("../../fonts/DINPro/DINProBold.woff") format("woff"), url("../../fonts/DINPro/DINProBold.woff2") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: wrap; }
@@ -1209,7 +1209,7 @@ main {
   height: 471px;
   padding-bottom: 10px;
   margin-bottom: 100px;
-  background: url("../img/mobile-app/app.jpg") no-repeat center;
+  background: url("../../img/main/mobile-app/app.jpg") no-repeat center;
   background-size: auto 100%; }
   .mobile-app__header {
     color: #ffffff;
