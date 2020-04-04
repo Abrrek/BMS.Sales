@@ -1060,8 +1060,8 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 23.5%;
-    height: 515px;
+    width: 22.5%;
+    height: 525px;
     text-decoration: none;
     transition: 0.5s ease; }
     .discount__card:hover {
@@ -1079,8 +1079,8 @@ main {
     .discount__card-description {
       width: 100%;
       height: 125px;
-      padding-top: 27px;
-      padding-left: 17px; }
+      padding-top: 25px;
+      padding-left: 19px; }
     .discount__card-name {
       color: #202020;
       font-family: "DIN Pro Regular", sans-serif;
@@ -1102,7 +1102,8 @@ main {
         height: 15px; }
     .discount__card-price {
       color: #202020;
-      font-family: "DIN Pro Regular", sans-serif; }
+      font-family: "DIN Pro Regular", sans-serif;
+      margin-top: -10px; }
       .discount__card-price-span {
         font-size: 30px; }
       .discount__card-price-box {
@@ -1110,18 +1111,18 @@ main {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        margin-top: 8px;
+        margin-top: 10px;
         width: 100%;
-        padding: 0 17px;
-        padding-top: 23px; }
+        padding: 0 6px 0 17px;
+        padding-top: 28px; }
       .discount__card-price-old {
         font-family: "DIN Pro Regular", sans-serif;
         font-size: 18px;
         color: #919191;
         text-decoration: line-through;
-        margin-bottom: -23px;
-        padding-left: 17px;
-        padding-top: 7px; }
+        bottom: -21px;
+        position: absolute;
+        padding-left: 20px; }
     .discount__card-add-link {
       border: none;
       background-color: transparent; }
@@ -1186,15 +1187,16 @@ main {
     border: 2px solid #202020;
     color: #202020;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 75px;
     font-family: "DIN Pro Medium", sans-serif;
     font-size: 14px;
     transition: 0.5s ease; }
     .discount__other-arrow {
-      width: 10px;
+      width: 8px;
       margin-left: 5px;
       margin-top: 3px;
-      transition: 0.5s ease; }
+      transition: 0.5s ease;
+      transform: rotate(-90deg); }
       .discount__other-arrow-active {
         fill: #ffffff; }
     .discount__other:hover {
@@ -1204,10 +1206,11 @@ main {
 .mobile-app {
   display: flex;
   align-items: center;
+  height: 471px;
   padding-bottom: 10px;
   margin-bottom: 100px;
-  background: url("../img/mobile-app/app.jpg") no-repeat;
-  background-size: 100%; }
+  background: url("../img/mobile-app/app.jpg") no-repeat center;
+  background-size: auto 100%; }
   .mobile-app__header {
     color: #ffffff;
     font-family: "DIN Pro Bold", sans-serif;
@@ -1632,16 +1635,18 @@ main {
   .discount__card {
     width: 34%;
     margin-bottom: 60px; }
-  .mobile-app__header {
-    font-size: 50px;
-    line-height: 60px;
-    width: 800px;
-    padding-top: 30px; }
-  .mobile-app__description {
-    font-size: 22px;
-    margin-top: 10px; }
-  .mobile-app__button {
-    margin-top: 20px; }
+  .mobile-app {
+    height: 350px; }
+    .mobile-app__header {
+      font-size: 50px;
+      line-height: 60px;
+      width: 800px;
+      padding-top: 30px; }
+    .mobile-app__description {
+      font-size: 22px;
+      margin-top: 10px; }
+    .mobile-app__button {
+      margin-top: 20px; }
   .services__header {
     width: 36%; }
     .services__header::after, .services__header::before {
@@ -1850,17 +1855,19 @@ main {
       width: 25%; }
     .discount__header-text {
       font-size: 36px; }
-  .mobile-app__header {
-    font-size: 36px;
-    line-height: 50px;
-    width: 600px;
-    padding-top: 0; }
-  .mobile-app__description {
-    font-size: 20px;
-    margin-top: 0; }
-  .mobile-app__button {
-    height: 40px;
-    margin-top: 10px; }
+  .mobile-app {
+    height: 280px; }
+    .mobile-app__header {
+      font-size: 36px;
+      line-height: 50px;
+      width: 600px;
+      padding-top: 0; }
+    .mobile-app__description {
+      font-size: 20px;
+      margin-top: 0; }
+    .mobile-app__button {
+      height: 40px;
+      margin-top: 10px; }
   .services__header {
     width: 50%; }
     .services__header::before, .services__header::after {
@@ -1942,7 +1949,8 @@ main {
   .mobile-app {
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    height: 210px; }
     .mobile-app__header {
       font-size: 24px;
       line-height: 30px;
@@ -2081,22 +2089,24 @@ main {
       width: 10%; }
     .discount__header-text {
       font-size: 33px; }
-  .mobile-app__header {
-    font-size: 16px;
-    line-height: 20px;
-    width: 300px;
-    padding-top: 5px; }
-  .mobile-app__description {
-    font-size: 13px;
-    margin-top: 0; }
-  .mobile-app__button {
-    height: 27px;
-    width: 120px;
-    border-width: 1px;
-    font-weight: regular;
-    font-size: 12px; }
-    .mobile-app__button-icon {
-      margin-left: 5px; }
+  .mobile-app {
+    height: 140px; }
+    .mobile-app__header {
+      font-size: 16px;
+      line-height: 20px;
+      width: 300px;
+      padding-top: 5px; }
+    .mobile-app__description {
+      font-size: 13px;
+      margin-top: 0; }
+    .mobile-app__button {
+      height: 27px;
+      width: 120px;
+      border-width: 1px;
+      font-weight: regular;
+      font-size: 12px; }
+      .mobile-app__button-icon {
+        margin-left: 5px; }
   .services__header {
     width: 83%; }
     .services__header::before, .services__header::after {
@@ -2186,22 +2196,24 @@ main {
       width: 10%; }
     .discount__header-text {
       font-size: 25px; }
-  .mobile-app__header {
-    font-size: 14px;
-    line-height: 20px;
-    width: 200px;
-    padding-top: 5px; }
-  .mobile-app__description {
-    display: none; }
-  .mobile-app__button {
-    height: 25px;
-    width: 110px;
-    border-width: 1px;
-    font-weight: regular;
-    font-size: 12px;
-    margin-top: 2px; }
-    .mobile-app__button-icon {
-      margin-left: 5px; }
+  .mobile-app {
+    height: 110px; }
+    .mobile-app__header {
+      font-size: 14px;
+      line-height: 20px;
+      width: 200px;
+      padding-top: 5px; }
+    .mobile-app__description {
+      display: none; }
+    .mobile-app__button {
+      height: 25px;
+      width: 110px;
+      border-width: 1px;
+      font-weight: regular;
+      font-size: 12px;
+      margin-top: 2px; }
+      .mobile-app__button-icon {
+        margin-left: 5px; }
   .services__header {
     width: 80%; }
     .services__header::before, .services__header::after {
