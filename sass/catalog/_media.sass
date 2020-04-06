@@ -4,7 +4,7 @@
 @media screen and ( max-width: 1264px )
 	.main-section
 		&__navbar
-			width: 590px
+			width: 600px
 		&__like
 			margin-left: 10px
 			width: 50px
@@ -275,6 +275,12 @@
 	.catalog
 		&__right
 			justify-content: center
+			&-pages
+				&-buttons
+					width: 300px
+				&-button
+					&--3, &--4
+						display: none
 		&__header-box
 			top: 514px
 		&__card
@@ -320,12 +326,38 @@
 			&-error
 				display: none
 	//Футер
+	//
+	.modal
+		&__dialog
+			padding: 10px
+			&-success
+				height: 350px
+				&-text
+					width: 300px
+					padding: 20px 0 0 0
+					margin: 0 auto
+			&-box
+				width: 350px
+		&__input
+			margin: auto
+			width: 320px
+			&-group
+				margin-bottom: 30px
+		&__policy
+			margin-left: 15px
+			margin-top: 0
+			margin-bottom: 15px
 @media screen and ( max-width: 420px )
 	//
 	.catalog
 		&__card
 			width: 100%
 			margin-bottom: 40px
+		&__right
+			&-pages
+				&-text
+					&--3, &--4, &--5, &--6
+						display: none
 	// Каталог товаров
 	//
 	.services

@@ -49,6 +49,7 @@
 			height: 25px
 			border-radius: 50%
 			transition: $transition border
+			border: 1px solid $bgsecondary
 			&:hover
 				border: 1px solid $secondary
 				background-color: $bgsecondary
@@ -61,22 +62,44 @@
 			font-size: 16px
 			text-decoration: none
 			font-family: $dmedium
+			transition: $transition
+			border-bottom: 1px solid trasparent
+			&::after
+				// content: ''
+				width: 100%
+				height: 2px
+				z-index: 1000
+				bottom: -5px
+				position: absolute
+				background-color: $primary	
+			&:hover
+				color: $primary
+				&::after
+					content: ''
+				// border-bottom: 1px solid $primary
 			&-list-1, &-list-2, &-list-3, &-list-4, &-list-5, &-list-6, 
 				height: 0
 				overflow: hidden
 				position: absolute
 				top: 22px
+				margin-left: 7px
+				margin-top: 5px
 				z-index: 10
 				width: 100px
 				transition: $transitionl height
 			&-list
 				&-li
+					display: flex
+					align-items: flex-end
 					padding-left: 2px
-					padding-top: 4px
+					margin-top: 2px
 					list-style: none
 					background-color: darken($bgsecondary, 30%)
 					height: 20px
-					margin-bottom: 2px
+					font-family: $dregular
+					font-size: 16px
+					color: $dark
+					cursor: pointer
 				&-active-1
 					height: 66px
 				&-active-2
@@ -170,7 +193,7 @@
 		background-color: $primary
 		border: none
 		&-image
-			fill: $white
+			fill: $white 
 		&-numb
 			color: $white
 		&-triangle

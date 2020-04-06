@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'DIN Pro Light';
   src: url("../../fonts/DINPro/DINProLight.woff") format("woff"), url("../../fonts/DINPro/DINProLight.woff2") format("woff");
@@ -43,6 +44,40 @@ main {
 .swiper-container {
   width: 100%;
   height: 100%; }
+
+.rating-area {
+  overflow: hidden;
+  width: 105px; }
+
+.rating-area:not(:checked) > input {
+  display: none; }
+
+.rating-area:not(:checked) > label {
+  float: right;
+  width: 20px;
+  cursor: pointer;
+  font-size: 25px;
+  color: #919191; }
+
+.rating-area:not(:checked) > label:before {
+  content: '★'; }
+
+.rating-area > input:checked ~ label {
+  color: #f47920; }
+
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+  color: #f47920; }
+
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+  color: #f47920; }
+
+.rate-area > label:active {
+  position: relative; }
 
 .top-header {
   display: flex;
@@ -246,22 +281,42 @@ main {
     color: #202020;
     font-size: 16px;
     text-decoration: none;
-    font-family: "DIN Pro Medium", sans-serif; }
+    font-family: "DIN Pro Medium", sans-serif;
+    transition: 0.5s ease;
+    border-bottom: 1px solid trasparent; }
+    .main-section__nav-item::after {
+      width: 100%;
+      height: 2px;
+      z-index: 1000;
+      bottom: -5px;
+      position: absolute;
+      background-color: #f47920; }
+    .main-section__nav-item:hover {
+      color: #f47920; }
+      .main-section__nav-item:hover::after {
+        content: ''; }
     .main-section__nav-item-list-1, .main-section__nav-item-list-2, .main-section__nav-item-list-3, .main-section__nav-item-list-4, .main-section__nav-item-list-5, .main-section__nav-item-list-6 {
       height: 0;
       overflow: hidden;
       position: absolute;
       top: 22px;
+      margin-left: 7px;
+      margin-top: 5px;
       z-index: 10;
       width: 100px;
       transition: 0.5s linear height; }
     .main-section__nav-item-list-li {
+      display: flex;
+      align-items: flex-end;
       padding-left: 2px;
-      padding-top: 4px;
+      margin-top: 2px;
       list-style: none;
       background-color: #aaaaaa;
       height: 20px;
-      margin-bottom: 2px; }
+      font-family: "DIN Pro Regular", sans-serif;
+      font-size: 16px;
+      color: #202020;
+      cursor: pointer; }
     .main-section__nav-item-list-active-1 {
       height: 66px; }
     .main-section__nav-item-list-active-2 {
@@ -409,7 +464,10 @@ main {
     width: 320px; }
   .main-section__sort-new, .main-section__sort-page {
     position: relative; }
+    .main-section__sort-new option, .main-section__sort-page option {
+      cursor: pointer !important; }
     .main-section__sort-new-list, .main-section__sort-page-list {
+      cursor: pointer;
       position: relative;
       display: block;
       width: 100%;
@@ -524,171 +582,172 @@ main {
       color: #f47920;
       text-decoration: underline; }
 
-.catalog__container {
-  display: flex;
-  align-items: flex-start; }
-
-.catalog__right {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-flow: wrap;
-  margin-left: 25px;
-  width: 75.1%;
-  margin-bottom: 300px; }
-  .catalog__right-pages {
-    margin: auto;
+.catalog {
+  margin-bottom: 100px; }
+  .catalog__container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px; }
-    .catalog__right-pages-texts {
-      display: flex;
-      align-items: flex-end; }
-    .catalog__right-pages-text {
-      color: #919191;
-      font-family: "DIN Pro Regular", sans-serif;
-      font-size: 16px; }
-      .catalog__right-pages-text--2, .catalog__right-pages-text--4, .catalog__right-pages-text--6 {
-        font-weight: 700;
-        font-size: 17px; }
-    .catalog__right-pages-buttons {
-      display: flex;
-      width: 385px;
-      justify-content: space-around;
-      margin-top: 30px; }
-    .catalog__right-pages-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #202020;
-      font-family: "DIN Pro Medium", sans-serif;
-      font-size: 14px;
-      text-decoration: none;
-      width: 45px;
-      height: 45px;
-      border: 2px solid #202020;
-      transition: 0.5s ease; }
-      .catalog__right-pages-button:hover {
-        color: #f47920;
-        border: 2px solid #f47920; }
-      .catalog__right-pages-button--1 {
-        background-color: #c3c3c3;
-        border: none; }
-        .catalog__right-pages-button--1:hover {
-          color: #202020;
-          border: none; }
-      .catalog__right-pages-button--7 {
-        background-color: #f47920;
-        border: none; }
-        .catalog__right-pages-button--7-arrow {
-          width: 13px;
-          border: none;
-          fill: #ffffff; }
-        .catalog__right-pages-button--7:hover {
-          color: #ffffff;
-          border: 2px solid #202020; }
-
-.catalog__card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 31.4%;
-  height: 515px;
-  margin-bottom: 70px;
-  text-decoration: none;
-  transition: 0.5s ease; }
-  .catalog__card:nth-child(4), .catalog__card:nth-child(5), .catalog__card:nth-child(6), .catalog__card:nth-child(7), .catalog__card:nth-child(8), .catalog__card:nth-child(9) {
-    margin-bottom: 104px; }
-  .catalog__card:hover {
-    background-color: #dddddd; }
-  .catalog__card-image {
-    height: 100%; }
-    .catalog__card-image-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 320px;
-      overflow: hidden;
-      background-color: #f6f6f6; }
-  .catalog__card-description {
-    width: 100%;
-    height: 125px;
-    padding-top: 27px;
-    padding-left: 17px; }
-  .catalog__card-name {
-    color: #202020;
-    font-family: "DIN Pro Regular", sans-serif;
-    font-size: 18px;
-    margin-bottom: 3px;
-    text-decoration: none; }
-  .catalog__card-label {
-    color: #919191;
-    font-family: "DIN Pro Light", sans-serif;
-    font-size: 14px;
-    margin-bottom: 20px; }
-  .catalog__card-rating {
+    align-items: flex-start; }
+  .catalog__right {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100px; }
-    .catalog__card-rating-icon {
-      width: 15px;
-      height: 15px; }
-  .catalog__card-price {
-    color: #202020;
-    font-family: "DIN Pro Regular", sans-serif; }
-    .catalog__card-price-span {
-      font-size: 30px; }
-    .catalog__card-price-box {
-      align-self: flex-end;
+    align-items: flex-start;
+    flex-flow: wrap;
+    margin-left: 25px;
+    width: 75.1%; }
+    .catalog__right-pages {
+      margin: auto;
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-top: 8px;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px; }
+      .catalog__right-pages-texts {
+        display: flex;
+        align-items: flex-end; }
+      .catalog__right-pages-text {
+        color: #919191;
+        font-family: "DIN Pro Regular", sans-serif;
+        font-size: 16px; }
+        .catalog__right-pages-text--2, .catalog__right-pages-text--4, .catalog__right-pages-text--6 {
+          font-weight: 700;
+          font-size: 17px; }
+      .catalog__right-pages-buttons {
+        display: flex;
+        width: 385px;
+        justify-content: space-around;
+        margin-top: 30px; }
+      .catalog__right-pages-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #202020;
+        font-family: "DIN Pro Medium", sans-serif;
+        font-size: 14px;
+        text-decoration: none;
+        width: 45px;
+        height: 45px;
+        border: 2px solid #202020;
+        transition: 0.5s ease; }
+        .catalog__right-pages-button:hover {
+          color: #f47920;
+          border: 2px solid #f47920; }
+        .catalog__right-pages-button--1 {
+          background-color: #c3c3c3;
+          border: none; }
+          .catalog__right-pages-button--1:hover {
+            color: #202020;
+            border: none; }
+        .catalog__right-pages-button--7 {
+          background-color: #f47920;
+          border: none; }
+          .catalog__right-pages-button--7-arrow {
+            width: 13px;
+            border: none;
+            fill: #ffffff; }
+          .catalog__right-pages-button--7:hover {
+            color: #ffffff;
+            border: 2px solid #202020; }
+  .catalog__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 31.4%;
+    height: 515px;
+    margin-bottom: 70px;
+    text-decoration: none;
+    transition: 0.5s ease; }
+    .catalog__card:nth-child(4), .catalog__card:nth-child(5), .catalog__card:nth-child(6), .catalog__card:nth-child(7), .catalog__card:nth-child(8), .catalog__card:nth-child(9) {
+      margin-bottom: 104px; }
+    .catalog__card:hover {
+      background-color: #dddddd; }
+    .catalog__card-image {
+      height: 100%; }
+      .catalog__card-image-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+        background-color: #f6f6f6; }
+    .catalog__card-description {
       width: 100%;
-      padding: 0 17px;
-      padding-top: 23px; }
-    .catalog__card-price-old {
+      height: 125px;
+      padding-top: 27px;
+      padding-left: 17px; }
+    .catalog__card-name {
+      color: #202020;
       font-family: "DIN Pro Regular", sans-serif;
       font-size: 18px;
+      margin-bottom: 3px;
+      text-decoration: none; }
+    .catalog__card-label {
       color: #919191;
-      text-decoration: line-through;
-      bottom: -31px;
+      font-family: "DIN Pro Light", sans-serif;
+      font-size: 14px;
+      margin-bottom: 20px; }
+    .catalog__card-rating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100px;
+      margin-top: -20px; }
+      .catalog__card-rating-icon {
+        width: 15px;
+        height: 15px; }
+    .catalog__card-price {
+      color: #202020;
+      font-family: "DIN Pro Regular", sans-serif; }
+      .catalog__card-price-span {
+        font-size: 30px; }
+      .catalog__card-price-box {
+        align-self: flex-end;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 8px;
+        width: 100%;
+        padding: 0 17px;
+        padding-top: 23px;
+        border-top: 1px solid #919191; }
+      .catalog__card-price-old {
+        font-family: "DIN Pro Regular", sans-serif;
+        font-size: 18px;
+        color: #919191;
+        text-decoration: line-through;
+        bottom: -31px;
+        position: absolute;
+        padding-left: 20px; }
+    .catalog__card-add-link {
+      border: none;
+      background-color: transparent; }
+      .catalog__card-add-link:hover {
+        cursor: pointer; }
+    .catalog__card-add-icon {
+      width: 24px;
+      height: 24px;
+      margin-top: 4px;
+      fill: #919191;
+      transition: 0.5s ease; }
+      .catalog__card-add-icon:hover {
+        fill: #202020; }
+    .catalog__card-discount {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: absolute;
-      padding-left: 20px; }
-  .catalog__card-add-link {
-    border: none;
-    background-color: transparent; }
-    .catalog__card-add-link:hover {
-      cursor: pointer; }
-  .catalog__card-add-icon {
-    width: 24px;
-    height: 24px;
-    margin-top: 4px;
-    fill: #919191;
-    transition: 0.5s ease; }
-    .catalog__card-add-icon:hover {
-      fill: #202020; }
-  .catalog__card-discount {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 71px;
-    height: 50px;
-    background-color: #f47920;
-    color: #ffffff;
-    font-family: "DIN Pro Regular", sans-serif;
-    font-size: 30px;
-    letter-spacing: -0.3px;
-    left: -13px;
-    top: 15px; }
+      width: 71px;
+      height: 50px;
+      background-color: #f47920;
+      color: #ffffff;
+      font-family: "DIN Pro Regular", sans-serif;
+      font-size: 30px;
+      letter-spacing: -0.3px;
+      left: -13px;
+      top: 15px; }
 
 .services {
-  margin-bottom: 200px; }
+  margin-bottom: 100px; }
   .services__container {
     position: relative; }
   .services__header {
@@ -1003,13 +1062,190 @@ main {
     font-size: 14px;
     color: #919191; }
 
+.modal {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 199000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(32, 32, 32, 0.6); }
+  .modal__close-block {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 200; }
+  .modal--visible {
+    opacity: 1;
+    visibility: visible !important; }
+  .modal__dialog {
+    visibility: hidden;
+    position: relative;
+    z-index: 299;
+    max-width: 36.36rem;
+    background-color: #f6f6f6;
+    padding: 30px;
+    color: #ffffff; }
+    .modal__dialog-success {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 400px; }
+      .modal__dialog-success-active {
+        display: flex !important; }
+      .modal__dialog-success-text {
+        color: #202020;
+        font-family: "DIN Pro Medium", sans-serif;
+        font-size: 26px;
+        width: 400px;
+        padding: 30px	50px; }
+    .modal__dialog-check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #66CC66; }
+      .modal__dialog-check-icon {
+        width: 170px;
+        height: 170px; }
+    .modal__dialog-box-active {
+      display: none; }
+  .modal__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    margin: 12px;
+    cursor: pointer; }
+    .modal__close-icon {
+      width: 20px; }
+  .modal__title {
+    font-family: "DIN Pro Medium", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 2.43rem;
+    color: #202020; }
+  .modal__form {
+    display: flex;
+    flex-direction: column; }
+  .modal__input {
+    height: 50px;
+    width: 350px;
+    color: #202020;
+    font-family: "DIN Pro Regular", sans-serif;
+    font-size: 20px;
+    padding-left: 10px; }
+    .modal__input-group {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3rem; }
+      .modal__input-group--last {
+        margin-bottom: 0; }
+  .modal__policy {
+    margin-top: 35px;
+    margin-bottom: 50px; }
+  .modal__button {
+    height: 60px;
+    font-size: 18px;
+    font-family: "DIN Pro Medium", sans-serif;
+    background-color: transparent;
+    border: 2px solid #202020;
+    color: #202020;
+    transition: 0.5s ease; }
+    .modal__button:hover {
+      background-color: #202020;
+      color: #ffffff; }
+  .modal__form-success {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; }
+    .modal__form-success-check {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px solid #f47920; }
+      .modal__form-success-check-image {
+        margin-top: 9px;
+        width: 70%; }
+    .modal__form-success-text {
+      font-size: 1.56rem; }
+  .modal__vk-text {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    margin-top: 45px; }
+  .modal__vk-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    margin: auto;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #f47920;
+    color: #ffffff;
+    font-size: 2.5rem; }
+
+.policy {
+  position: relative; }
+  .policy__checkbox {
+    opacity: 0;
+    visibility: hidden; }
+    .policy__checkbox:checked ~ .policy__label::before {
+      background: #202020 url("../../img/check.svg") no-repeat center/0.8rem; }
+  .policy__label {
+    display: flex;
+    align-items: center;
+    font-size: 1.142rem;
+    color: #202020;
+    font-family: "DIN Pro Regular", sans-serif;
+    font-size: 16px; }
+    .policy__label-span {
+      color: #f47920; }
+    .policy__label::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      border: 2px solid #202020;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-right: 0.64rem; }
+    .policy__label--center {
+      justify-content: center; }
+
+div.invalid {
+  color: tomato;
+  position: absolute;
+  bottom: -20px;
+  font-family: "DIN Pro Regular", sans-serif; }
+
 @media screen and (max-width: 1368px) {
   .container {
     width: 90%; } }
 
 @media screen and (max-width: 1264px) {
   .main-section__navbar {
-    width: 590px; }
+    width: 600px; }
   .main-section__like {
     margin-left: 10px;
     width: 50px; }
@@ -1230,6 +1466,10 @@ main {
       margin-top: 15px; }
   .catalog__right {
     justify-content: center; }
+    .catalog__right-pages-buttons {
+      width: 300px; }
+    .catalog__right-pages-button--3, .catalog__right-pages-button--4 {
+      display: none; }
   .catalog__header-box {
     top: 514px; }
   .catalog__card {
@@ -1266,12 +1506,33 @@ main {
       .footer__right-payment {
         margin-top: 30px; }
     .footer__down-error {
-      display: none; } }
+      display: none; }
+  .modal__dialog {
+    padding: 10px; }
+    .modal__dialog-success {
+      height: 350px; }
+      .modal__dialog-success-text {
+        width: 300px;
+        padding: 20px 0 0 0;
+        margin: 0 auto; }
+    .modal__dialog-box {
+      width: 350px; }
+  .modal__input {
+    margin: auto;
+    width: 320px; }
+    .modal__input-group {
+      margin-bottom: 30px; }
+  .modal__policy {
+    margin-left: 15px;
+    margin-top: 0;
+    margin-bottom: 15px; } }
 
 @media screen and (max-width: 420px) {
   .catalog__card {
     width: 100%;
     margin-bottom: 40px; }
+  .catalog__right-pages-text--3, .catalog__right-pages-text--4, .catalog__right-pages-text--5, .catalog__right-pages-text--6 {
+    display: none; }
   .services__header {
     width: 80%; }
     .services__header::before, .services__header::after {

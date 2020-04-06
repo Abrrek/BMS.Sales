@@ -33,7 +33,7 @@ $(document).ready(function () {
 		$('.main-section__nav-item-arrow-6').toggleClass('main-section__nav-item-arrow-active-1');
 	});
 
-	$('.main-section__nav-1').on('click', function() {
+	$('.main-section__nav-1').hover( function() {
 		$('.main-section__nav-item-arrow-1').toggleClass('main-section__nav-item-arrow-active-2');
 		$('.main-section__nav-item-arrow-2').removeClass('main-section__nav-item-arrow-active-2');
 		$('.main-section__nav-item-arrow-3').removeClass('main-section__nav-item-arrow-active-2');
@@ -47,7 +47,7 @@ $(document).ready(function () {
 		$('.main-section__nav-item-list-5').removeClass('main-section__nav-item-list-active-5');
 		$('.main-section__nav-item-list-6').removeClass('main-section__nav-item-list-active-6');
 	});
-	$('.main-section__nav-2').on('click', function() {
+	$('.main-section__nav-2').hover( function() {
 		$('.main-section__nav-item-arrow-2').toggleClass('main-section__nav-item-arrow-active-2');
 		$('.main-section__nav-item-arrow-1').removeClass('main-section__nav-item-arrow-active-2');
 		$('.main-section__nav-item-arrow-3').removeClass('main-section__nav-item-arrow-active-2');
@@ -61,7 +61,7 @@ $(document).ready(function () {
 		$('.main-section__nav-item-list-5').removeClass('main-section__nav-item-list-active-5');
 		$('.main-section__nav-item-list-6').removeClass('main-section__nav-item-list-active-6');
 	});
-	$('.main-section__nav-3').on('click', function() {
+	$('.main-section__nav-3').hover( function() {
 		$('.main-section__nav-item-arrow-3').toggleClass('main-section__nav-item-arrow-active-2');
 		$('.main-section__nav-item-arrow-1').removeClass('main-section__nav-item-arrow-active-2');
 		$('.main-section__nav-item-arrow-2').removeClass('main-section__nav-item-arrow-active-2');
@@ -75,7 +75,7 @@ $(document).ready(function () {
 		$('.main-section__nav-item-list-5').removeClass('main-section__nav-item-list-active-5');
 		$('.main-section__nav-item-list-6').removeClass('main-section__nav-item-list-active-6');
 	});
-	$('.main-section__nav-4').on('click', function() {
+	$('.main-section__nav-4').hover( function() {
 		$('.main-section__nav-item-arrow-4').toggleClass('main-section__nav-item-arrow-active-2');
 		$('.main-section__nav-item-arrow-1').removeClass('main-section__nav-item-arrow-active-2');
 		$('.main-section__nav-item-arrow-2').removeClass('main-section__nav-item-arrow-active-2');
@@ -89,7 +89,7 @@ $(document).ready(function () {
 		$('.main-section__nav-item-list-5').removeClass('main-section__nav-item-list-active-5');
 		$('.main-section__nav-item-list-6').removeClass('main-section__nav-item-list-active-6');
 	});
-	$('.main-section__nav-5').on('click', function() {
+	$('.main-section__nav-5').hover( function() {
 		$('.main-section__nav-item-arrow-5').toggleClass('main-section__nav-item-arrow-active-2');
 		$('.main-section__nav-item-arrow-1').removeClass('main-section__nav-item-arrow-active-2');
 		$('.main-section__nav-item-arrow-2').removeClass('main-section__nav-item-arrow-active-2');
@@ -103,7 +103,7 @@ $(document).ready(function () {
 		$('.main-section__nav-item-list-4').removeClass('main-section__nav-item-list-active-4');
 		$('.main-section__nav-item-list-6').removeClass('main-section__nav-item-list-active-6');
 	});
-	$('.main-section__nav-6').on('click', function() {
+	$('.main-section__nav-6').hover( function() {
 		$('.main-section__nav-item-arrow-6').toggleClass('main-section__nav-item-arrow-active-2');
 		$('.main-section__nav-item-arrow-1').removeClass('main-section__nav-item-arrow-active-2');
 		$('.main-section__nav-item-arrow-2').removeClass('main-section__nav-item-arrow-active-2');
@@ -272,4 +272,88 @@ $(document).ready(function () {
 		$('.footer__column--2-link-arrow').toggleClass('footer__column--2-link-arrow-active');
 	});
 	//Футер
+	//
+	var modal = $('.modal'),
+			modalDialog = $('.modal__dialog'),
+			modalBtn = $('[data-toggle=modal]'),
+			closeBtn = $('.modal__close'),
+			closeModal = $('.modal__close-block');
+
+	modalBtn.on('click', function() {
+		modal.addClass('modal--visible');
+		modalDialog.addClass('modal--visible');
+	});
+
+	closeBtn.on('click', function() {
+		modal.removeClass('modal--visible');
+		modalDialog.removeClass('modal--visible');
+	});
+
+	closeModal.on('click', function() {
+		modal.removeClass('modal--visible');
+		modalDialog.removeClass('modal--visible');
+	});
+
+	$(document).keydown(function(e) {
+		if (e.which == 27) {
+			modal.removeClass('modal--visible');
+			modalDialog.removeClass('modal--visible');
+		}
+	});
+
+	$('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "Ваш номер телефона:"});
+
+	$('.modal__form').validate({
+		errorElement: "div",
+		errorClass:"invalid",
+		rules: {
+			// simple rule, converted to {required:true}
+			userName: {
+				required: true,
+				minlength: 2,
+				maxlength: 15,
+			},
+			userPhone: { 
+				required: true,
+				minlength: 17
+			},
+			// compound rule
+			userEmail: {
+				required: true,
+				email: true
+			},
+			policyCheckbox: {
+				required: true
+			}
+		},
+		messages: {
+			userName: {
+				required: "Имя обязательно",
+				minlength: "Имя не короче 2-х букв",
+				maxlength: "Имя не длиннее 15-ти букв"
+			},
+			userPhone:  {
+				required: "Телефон обязателен",
+				minlength: "Введите корректный номер телефона"
+			},
+			userEmail: {
+				required: "Заполните поле",
+				email: "Введите корректный email"
+			},
+			policyCheckbox: "Политика конфиденциальности"
+		},
+		submitHandler: function(form) {
+			$.ajax({
+				type: "POST",
+				url: "modal-send.php",
+				data: $(form).serialize(),
+				success: function (response) {
+					$(form)[0].reset();
+					$('.modal__dialog-box').addClass('modal__dialog-box-active');
+					$('.modal__dialog-success').addClass('modal__dialog-success-active')
+				}
+			});
+		}
+	});
+	//
 });

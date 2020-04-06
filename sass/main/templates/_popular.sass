@@ -50,6 +50,8 @@
 		height: 515px
 		text-decoration: none
 		transition: $transition
+		border: none
+		background-color: transparent
 		&:hover
 			background-color: darken($bgsecondary, 10%)
 		&-image
@@ -81,12 +83,17 @@
 			margin-bottom: 20px
 		&-rating
 			display: flex
-			justify-content: space-between
+			justify-content: flex-start
 			align-items: center
-			width: 100px
+			// width: 100px
+			margin-top: -15px
+			// height: 35px
 			&-icon
+				margin-right: 4px
 				width: 15px
 				height: 15px
+				&-active
+					fill: $primary
 		&-price
 			color: $dark
 			font-family: $dregular
@@ -141,5 +148,7 @@
 		&:hover
 			color: $white
 			background-color: $dark
+
+
 					
 
